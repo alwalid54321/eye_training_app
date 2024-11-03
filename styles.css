@@ -1,0 +1,185 @@
+:root {
+  --primary-color: #00ff88;
+  --bg-color: #0a0a1a;
+  --text-color: rgba(255, 255, 255, 0.87);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  padding-top: 4rem; /* Adjust to the height of the header for separation */
+}
+
+.controls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+  z-index: 50;
+  height: 4rem; /* Explicitly set header height */
+}
+
+.app {
+  min-height: calc(
+    100vh - 4rem
+  ); /* Ensures app content fills space below the header */
+  position: relative;
+  padding-top: 4rem; /* Optional additional padding for spacing */
+}
+
+.grid-background {
+  position: absolute;
+  inset: 0;
+  background-size: 50px 50px;
+  background-image: linear-gradient(
+      to right,
+      var(--primary-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--primary-color) 1px, transparent 1px);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.cyber-text {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.cyber-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-family: monospace;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  color: var(--primary-color);
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cyber-panel {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+}
+
+.cyber-label {
+  display: block;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+.cyber-select {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 255, 136, 0.5);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cyber-range {
+  flex-grow: 1;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  appearance: none;
+}
+
+.cyber-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.cyber-value {
+  color: var(--primary-color);
+  font-family: monospace;
+  min-width: 4rem;
+  text-align: right;
+}
+
+.cyber-color-input {
+  width: 3rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid rgba(0, 255, 136, 0.5);
+}
+
+.exercise-container {
+  padding-top: 10rem;
+  height: 100vh;
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  transition: all 75ms;
+}
+
+.box {
+  position: absolute;
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 0.5rem;
+}
+
+.circle {
+  position: absolute;
+  border: 2px solid rgba(0, 255, 136, 0.2);
+  border-radius: 50%;
+}
+
+.cyber-glow {
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor,
+    0 0 30px currentColor;
+}

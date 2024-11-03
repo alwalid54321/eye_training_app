@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision Training System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="grid-background"></div>
+    
+    <div class="controls">
+      <div class="header">
+        <h1 class="cyber-text">Vision Training System</h1>
+        <div class="cyber-badge">v2.0</div>
+      </div>
+      
+      <div class="controls-grid">
+        <div class="cyber-panel">
+          <label class="cyber-label">Exercise Type</label>
+          <select id="exerciseType" class="cyber-select">
+            <option value="random">Random Movement</option>
+            <option value="linear">Linear Path</option>
+            <option value="box">Box Tracking</option>
+            <option value="circular">Circular Motion</option>
+          </select>
+        </div>
+
+        <div class="cyber-panel">
+          <label class="cyber-label">Speed Control</label>
+          <div class="control-row">
+            <input type="range" id="speed" min="1" max="10" value="2" class="cyber-range">
+            <span class="cyber-value" id="speedValue">2</span>
+          </div>
+        </div>
+
+        <div class="cyber-panel">
+          <label class="cyber-label">Dot Size</label>
+          <div class="control-row">
+            <input type="range" id="dotSize" min="5" max="50" value="20" class="cyber-range">
+            <span class="cyber-value" id="dotSizeValue">20px</span>
+          </div>
+        </div>
+
+        <div class="cyber-panel">
+          <label class="cyber-label">Color</label>
+          <div class="control-row">
+            <input type="color" id="dotColor" value="#00ff88" class="cyber-color-input">
+            <span class="cyber-value" id="colorValue">#00ff88</span>
+          </div>
+        </div>
+
+        <div class="cyber-panel" id="boxSizePanel" style="display: none;">
+          <label class="cyber-label">Box Size</label>
+          <div class="control-row">
+            <input type="range" id="boxSize" min="50" max="300" value="100" class="cyber-range">
+            <span class="cyber-value" id="boxSizeValue">100px</span>
+          </div>
+        </div>
+
+        <div class="cyber-panel" id="radiusPanel" style="display: none;">
+          <label class="cyber-label">Radius</label>
+          <div class="control-row">
+            <input type="range" id="radius" min="50" max="300" value="150" class="cyber-range">
+            <span class="cyber-value" id="radiusValue">150px</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="exerciseContainer" class="exercise-container">
+      <div id="dot" class="dot cyber-glow"></div>
+      <div id="box" class="box cyber-glow" style="display: none;"></div>
+      <div id="circle" class="circle cyber-glow" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

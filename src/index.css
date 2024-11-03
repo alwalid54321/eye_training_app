@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #008aff;
+  --secondary-color: #00f7ff;
+  --bg-color: #0a0a1a;
+  --text-color: rgba(255, 255, 255, 0.87);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 138, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 138, 255, 0.1) 1px, transparent 1px);
+}
+
+.cyber-text {
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
+}
+
+.cyber-glow {
+  box-shadow: 0 0 10px var(--primary-color),
+              0 0 20px var(--primary-color),
+              0 0 30px var(--primary-color);
+}
+
+.cyber-panel {
+  @apply bg-black/50 rounded-lg p-4 border border-[#008aff]/30 backdrop-blur-lg;
+  box-shadow: 0 0 20px rgba(0, 138, 255, 0.1);
+}
+
+.cyber-label {
+  @apply block text-[#008aff] text-sm font-medium mb-2;
+  text-shadow: 0 0 5px #008aff;
+}
+
+.cyber-select {
+  @apply bg-black/50 border-2 border-[#008aff]/50 rounded px-3 py-2 text-[#008aff] w-full;
+  box-shadow: 0 0 5px rgba(0, 138, 255, 0.2);
+}
+
+.cyber-range {
+  @apply appearance-none h-2 rounded-lg bg-black/50;
+  border: 1px solid rgba(0, 138, 255, 0.3);
+}
+
+.cyber-range::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 rounded-full bg-[#008aff] cursor-pointer;
+  box-shadow: 0 0 10px #008aff;
+}
+
+.cyber-value {
+  @apply text-[#008aff] font-mono min-w-[4rem] text-right;
+}
+
+.cyber-badge {
+  @apply px-3 py-1 rounded-full text-sm font-mono;
+  background: rgba(0, 138, 255, 0.1);
+  border: 1px solid rgba(0, 138, 255, 0.3);
+  color: #008aff;
+  text-shadow: 0 0 5px #008aff;
+}
+
+.target {
+  @apply absolute rounded-full transition-opacity duration-300;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 138, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 138, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 138, 255, 0);
+  }
+}
+
+.score-display {
+  @apply fixed top-4 right-4 text-2xl font-bold cyber-text;
+  text-shadow: 0 0 15px var(--primary-color);
+}
+
+.timer-bar {
+  @apply fixed top-0 left-0 h-1 bg-[#008aff] transition-all;
+  box-shadow: 0 0 10px #008aff;
+}
+
+.stats-panel {
+  @apply fixed bottom-4 right-4 cyber-panel;
+  min-width: 200px;
+}
+
+.reaction-flash {
+  @apply fixed inset-0 pointer-events-none;
+  background: radial-gradient(circle, rgba(0, 138, 255, 0.2) 0%, transparent 70%);
+  animation: flash 0.5s ease-out forwards;
+}
+
+@keyframes flash {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.target-hit {
+  animation: hit 0.3s ease-out forwards;
+}
+
+@keyframes hit {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
