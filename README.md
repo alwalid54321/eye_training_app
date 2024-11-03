@@ -40,10 +40,6 @@ Alternatively, you can open the files in an IDE or code editor.
 2. Click on **"Start Custom Exercise"** to begin a custom dot movement exercise with controlled behavior.
 3. Follow the red dot as it appears and disappears randomly to improve eye-tracking skills.
 
-## Project Structure
-- **index.html**: Main HTML file that sets up the structure and loads the styles and JavaScript.
-- **styles.css**: Contains the CSS styles for the futuristic look.
-- **eyeTraining.js**: JavaScript file that handles the animations, random dot behavior, and exercise logic.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
