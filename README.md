@@ -1,4 +1,4 @@
-# Futuristic Eye Training
+# Eye Training
 
 ![HTML](https://img.shields.io/badge/HTML-5-orange)
 ![CSS](https://img.shields.io/badge/CSS-3-blue)
@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/status-active-success)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-Futuristic Eye Training is a simple JavaScript application designed to help users improve their eye-tracking skills through customizable and random dot-following exercises. Perfect for gamers or individuals looking to enhance eye movement precision.
+Eye Training is a simple JavaScript application designed to help users improve their eye-tracking skills through customizable and random dot-following exercises. Perfect for gamers or individuals looking to enhance eye movement precision.
 
 ## Table of Contents
 - [Features](#features)
